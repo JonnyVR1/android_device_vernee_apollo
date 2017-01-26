@@ -3,12 +3,12 @@
     "remote": "github",
     "repository": "JonnyXDA/android_vendor_vernee_apollo",
     "target_path": "vendor/vernee/apollo",
-    "branch": "LineageOS-14.1"
+    "revision": "LineageOS-14.1"
   },
   {
     "remote": "github",
     "repository": "JonnyXDA/android_kernel_vernee_apollo",
     "target_path": "kernel/vernee/apollo",
-    "branch": "LineageOS-14.1"
+    "revision": "LineageOS-14.1"
   }
 ] 

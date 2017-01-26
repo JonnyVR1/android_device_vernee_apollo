@@ -1,7 +1,7 @@
-# Vernee Apollo - LineageOS 14.1 / AOSP 7.1.1
+# Vernee Apollo - OmniROM / TWRP
 ==============
 
-This branch is device for building of the LineageOS 14.1 and Android Nougat 7.1.1 AOSP ROMs. For more information about building the ROM, read our [build manual](manual).
+This branch is device for building of the OmniROM & TWRP. For more information about building the ROM, read our [build manual](manual).
 
 ---
 

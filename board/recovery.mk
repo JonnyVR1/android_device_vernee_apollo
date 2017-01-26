@@ -4,9 +4,6 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/recovery.fstab
 
-#RECOVERY_VARIANT := twrp
-
-ifeq ($(RECOVERY_VARIANT), twrp)
 DEVICE_RESOLUTION := 2560x1440
 DEVICE_SCREEN_WIDTH := 2560
 DEVICE_SCREEN_HEIGHT := 1440
@@ -47,10 +44,3 @@ PRODUCT_COPY_FILES += \
 # Time Zone data for Recovery
 PRODUCT_COPY_FILES += \
     bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
-else
-# CWM
-BOARD_RECOVERY_SWIPE := true
-BOARD_SUPPRESS_EMMC_WIPE := true
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
-endif

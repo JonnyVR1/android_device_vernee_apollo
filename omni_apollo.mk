@@ -14,8 +14,11 @@
 # limitations under the License.
 #
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Get the prebuilt list of APNs
+$(call inherit-product, vendor/omni/config/cdma.mk)
+
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit device configuration
 $(call inherit-product, $(LOCAL_PATH)/device_apollo.mk)
@@ -29,6 +32,6 @@ PRODUCT_BRAND := Vernee
 PRODUCT_DEVICE := apollo
 PRODUCT_MANUFACTURER := Vernee
 PRODUCT_MODEL := Apollo
-PRODUCT_NAME := lineage_apollo
+PRODUCT_NAME := omni_apollo
 PRODUCT_RELEASE_NAME := apollo
 PRODUCT_RESTRICT_VENDOR_FILES := false
