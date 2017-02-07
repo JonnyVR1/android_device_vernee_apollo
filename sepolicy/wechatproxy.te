@@ -1,0 +1,51 @@
+# ==============================================
+# Policy File of /system/bin/wechatproxy Executable File 
+
+
+# ==============================================
+# Type Declaration
+# ==============================================
+type wechatproxy_exec, exec_type, file_type;
+type wechatproxy, domain;
+
+
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+#permissive wechatproxy;
+init_daemon_domain(wechatproxy)
+
+# Date : WK16.10
+# Operation : Migration
+# Purpose : for wechatproxy
+
+allow wechatproxy self:tcp_socket { write setopt read getopt accept connect bind listen };
+allow wechatproxy port:tcp_socket { name_bind name_connect };
+allow wechatproxy node:tcp_socket node_bind;
+
+allow wechatproxy self:capability net_bind_service;
+
+allow wechatproxy dnsproxyd_socket:sock_file write;
+allow wechatproxy fwmarkd_socket:sock_file write;
+allow wechatproxy self:udp_socket bind;
+
+allow wechatproxy netd:unix_stream_socket connectto;
+allow wechatproxy node:udp_socket node_bind;
+allow wechatproxy port:udp_socket name_bind;
+
+allow wechatproxy self:rawip_socket { getopt create setopt };
+
+#============= netd ==============
+allow netd wechatproxy:fd use;
+allow netd wechatproxy:tcp_socket { read write setopt getopt };
+
+#============= wechatproxy ==============
+allow wechatproxy self:capability { net_admin net_raw dac_override dac_read_search };
+allow wechatproxy self:tcp_socket create;
+allow wechatproxy shell_exec:file { read execute open execute_no_trans };
+allow wechatproxy system_data_file:file open;
+allow wechatproxy system_file:file execute_no_trans;
+
+
+
